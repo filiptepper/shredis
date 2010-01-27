@@ -8,15 +8,15 @@ Tested with Ruby 1.9.1p378 (2010-01-10 revision 26273).
 Usage
 -----
 
-`git clone git://github.com/filiptepper/shredis.git
-cd shredis
-gem install bundler
-gem bundle
-cp redis.yml.exmaple redis.yml`
+    git clone git://github.com/filiptepper/shredis.git
+    cd shredis
+    gem install bundler
+    gem bundle
+    cp redis.yml.exmaple redis.yml
 
 Edit `redis.yml`.
 
-`./bin/rackup`
+    ./bin/rackup
 
 Browse to `http://localhost:9292/`.
 
