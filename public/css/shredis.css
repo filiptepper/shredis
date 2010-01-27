@@ -56,6 +56,14 @@ a {
 }
 
 #database-current {
+  float: left;
+  font-size: 93%;
+  margin-bottom: 10px;
+}
+
+#database-search {
+  float: right;
+  font-size: 93%;
   margin-bottom: 10px;
 }
 

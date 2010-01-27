@@ -1,4 +1,5 @@
-<div id="keys-show">
+<div id="databases-search">
+
   <% if @database.nil? %>
 
   Database doesn't exist.
@@ -7,18 +8,10 @@
 
   <div class="clearfix">
     <%= erb :"databases/_partial_current_database", :layout => false %>
+    <%= erb :"databases/_form_search", :layout => false %>
   </div>
 
-  <% if @value.nil? %>
-
-  Key doesn't exist.
-
-  <% else %>
-
-  Key: <%= @key %>
-  Value: <%= @value %>
-
-  <% end %>
+  <%= erb :"keys/_partial_list", :layout => false %>
 
   <% end %>
 </div>

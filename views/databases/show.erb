@@ -5,25 +5,12 @@
 
   <% else %>
 
-  <div id="database-current">
-    Current database: <a href="/databases/<%= @database %>">#<%= @database %></a>.
+  <div class="clearfix">
+    <%= erb :"databases/_partial_current_database", :layout => false %>
+    <%= erb :"databases/_form_search", :layout => false %>
   </div>
 
-  <div id="database-keys">
-    <% if @keys.any? %>
-
-    Keys:
-
-    <% @keys.each do |key| %>
-    <a href="/databases/<%= @database %>/keys/<%= key %>"><%= key %></a>
-    <% end %>
-
-    <% else %>
-
-    Database empty.
-
-    <% end %>
-  </div>
+  <%= erb :"keys/_partial_list", :layout => false %>
 
   <% end %>
 </div>

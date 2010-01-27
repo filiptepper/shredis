@@ -1,0 +1,15 @@
+<div id="database-keys">
+  <% if @keys.any? %>
+
+  Keys:
+
+  <% @keys.each do |key| %>
+  <a href="/databases/<%= @database %>/keys/<%= key %>"><%= key %></a>
+  <% end %>
+
+  <% else %>
+
+  No keys found.
+
+  <% end %>
+</div>
