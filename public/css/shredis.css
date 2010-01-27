@@ -1,0 +1,73 @@
+body {
+  background-color: rgb(247, 247, 247);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: rgb(68, 68, 68);
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+#header {
+  background-color: rgb(68, 68, 68);
+  font-family: "Lucida Grande", Arial, sans-serif;
+}
+
+#header h1 {
+  font-size: 138.5%;
+  padding: 20px 10px 10px 10px;
+}
+
+#header h1 a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+#header ul {
+  padding: 0 10px;
+}
+
+#header ul li {
+  background-color: rgb(128, 128, 128);
+  float: left;
+  padding: 5px 10px;
+}
+
+#header ul li a {
+  color: rgb(247, 247, 247);
+  text-decoration: none;
+}
+
+#content {
+  background-color: #FFF;
+  padding: 10px;
+}
+
+#databases-list {
+  background-color: #FFF;
+}
+
+#database-current {
+  margin-bottom: 10px;
+}
+
+#status {
+  border-top: 1px solid rgb(128, 128, 128);
+  color: rgb(68, 68, 68);
+  font-size: 85%;
+  padding: 10px;
+}
+
+#shredis-github {
+  font-size: 77%;
+  padding: 0 10px;
+  text-align: right;
+}

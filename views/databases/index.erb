@@ -1,0 +1,15 @@
+<div id="databases-index">
+<% if @databases.any? %>
+
+Databases:
+
+<% @databases.each do |database| %>
+<a href="/databases/<%= database %>">#<%= database %></a>
+<% end %>
+
+<% else %>
+
+No databases.
+
+<% end %>
+</div>

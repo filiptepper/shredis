@@ -1,0 +1,10 @@
+# Use symbols for arguments required by redis gem (http://github.com/ezmobius/redis-rb/blob/master/lib/redis.rb#L124)
+
+development:
+  :host: localhost
+
+test:
+  :host: localhost
+
+production:
+  :host: localhost

@@ -1,0 +1,29 @@
+<div id="databases-show">
+  <% if @database.nil? %>
+
+  Database doesn't exist.
+
+  <% else %>
+
+  <div id="database-current">
+    Current database: <a href="/databases/<%= @database %>">#<%= @database %></a>.
+  </div>
+
+  <div id="database-keys">
+    <% if @keys.any? %>
+
+    Keys:
+
+    <% @keys.each do |key| %>
+    <a href="/databases/<%= @database %>/keys/<%= key %>"><%= key %></a>
+    <% end %>
+
+    <% else %>
+
+    Database empty.
+
+    <% end %>
+  </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,24 @@
+<div id="keys-show">
+  <% if @database.nil? %>
+
+  Database doesn't exist.
+
+  <% else %>
+
+  <div id="database-current">
+    Current database: <a href="/databases/<%= @database %>">#<%= @database %></a>.
+  </div>
+
+  <% if @value.nil? %>
+
+  Key doesn't exist.
+
+  <% else %>
+
+  Key: <%= @key %>
+  Value: <%= @value %>
+
+  <% end %>
+
+  <% end %>
+</div>
