@@ -12,7 +12,7 @@ Usage
     cd shredis
     gem install bundler
     gem bundle
-    cp redis.yml.exmaple redis.yml
+    cp redis.yml.example redis.yml
 
 Edit `redis.yml`.
 
@@ -31,6 +31,10 @@ To contribute:
 * spec,
 * code,
 * request pull.
+
+**Important!**
+
+Shredis tests use [FLUSHALL](http://code.google.com/p/redis/wiki/FlushallCommand) - you might want to use a separate Redis instance for testing.
 
 Issues
 ------
