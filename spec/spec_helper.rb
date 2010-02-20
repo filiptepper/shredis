@@ -1,6 +1,6 @@
-require File.join(File.dirname(__FILE__), "..", "shredis.rb")
+require "bundler_setup"
+Bundler.require(:default, :test)
 
-require "sinatra"
-require "spec"
+require File.join(File.dirname(__FILE__), "..", "shredis.rb")
 
 set :environment, :test

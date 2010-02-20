@@ -1,5 +1,5 @@
-bin/*
 vendor/*
 redis.yml
 rerun.txt
 webrat.log
+.DS_Store

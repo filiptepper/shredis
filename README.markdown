@@ -11,12 +11,12 @@ Usage
     git clone git://github.com/filiptepper/shredis.git
     cd shredis
     gem install bundler
-    gem bundle
+    bundle install
     cp redis.yml.example redis.yml
 
 Edit `redis.yml`.
 
-    ./bin/rackup
+    rackup
 
 Browse to `http://localhost:9292/`.
 

@@ -1,41 +1,39 @@
-require "redis"
-
 class Shredder
+  class << self
+    #Hack for ruby < 1.9
+    def type(key)
+      method_missing(:type, key)
+    end
+    
+    def method_missing(method, *args, &block)
+      instance.send(method, *args, &block)
+    end
 
-  def self.method_missing(method, *args, &block)
-    self.instance.send method, *args, &block
-  end
+    def db=(database)
+      @@config[:db] = database
+      @@redis = initialize_redis
+    end
 
-
-  def self.db=(database)
-    @@config[:db] = database
-    @@redis = initialize_redis
-  end
-
-
-  def self.databases
-    self.info.find_all { |key, value| key.to_s =~ /db([0-9]+)/ }.collect { |database| database[0].to_s.match(/db([0-9]+)/)[1] }
-  end
-
+    def databases
+      info.find_all { |key, value| key.to_s =~ /db([0-9]+)/ }.collect { |database| database[0].to_s.match(/db([0-9]+)/)[1] }
+    end
 
   private
 
+    def instance
+      @@redis ||= initialize_config && initialize_redis
+    end
 
-  def initialize; end;
+    def initialize_config
+      @@config = {}
+      @@config.merge YAML::load_file(File.join(ROOT_DIR, "redis.yml"))[Sinatra::Application.environment.to_s || "development"]
+    end
 
-  def self.instance
-    @@redis ||= initialize_config && initialize_redis
+    def initialize_redis
+      Redis.new @@config
+    end
+
   end
-
-  def self.initialize_config
-    @@config = {}
-    @@config.merge YAML::load_file(File.join(File.dirname(__FILE__), "..", "redis.yml"))[Sinatra::Application.environment.to_s || "development"]
-  end
-
-  def self.initialize_redis
-    Redis.new @@config
-  end
-
 end
 
 class Redis

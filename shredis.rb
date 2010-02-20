@@ -1,10 +1,11 @@
-require File.expand_path(File.join(File.dirname(__FILE__), "vendor", "gems", "environment"))
-
 Dir[File.join(File.dirname(__FILE__), "lib", "*")].each { |file| require file }
 
-require "sinatra"
+ROOT_DIR = File.dirname(__FILE__)
+
 configure do
-  set :views, "#{File.dirname(__FILE__)}/views"
+  set :root, ROOT_DIR
+  set :public, Proc.new { File.join(root, "public") }
+  set :views, Proc.new { File.join(root, "views") }
 end
 
 before do

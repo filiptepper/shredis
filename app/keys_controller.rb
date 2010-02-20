@@ -6,19 +6,19 @@ module Shredis
       @key = params[:id]
 
       unless @database.nil?
-        case Shredder.type params[:id]
+        case Shredder.type(@key)
 
         when "list"
-          @value = Shredder.lrange @key, 0, Shredder.llen(@key) - 1
+          @value = Shredder.lrange(@key, 0, Shredder.llen(@key) - 1)
 
         when "set"
-          @value = Shredder.smembers @key
+          @value = Shredder.smembers(@key)
 
         when "zset"
-          @value = Shredder.zrange @key, 0, Shredder.zcard(@key) - 1
+          @value = Shredder.zrange(@key, 0, Shredder.zcard(@key) - 1)
 
         when "string"
-          @value = Shredder.get @key
+          @value = Shredder.get(@key)
 
         end
       end
