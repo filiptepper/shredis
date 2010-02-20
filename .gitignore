@@ -3,3 +3,5 @@ redis.yml
 rerun.txt
 webrat.log
 .DS_Store
+.bundle
+Gemfile.lock
