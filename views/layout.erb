@@ -22,15 +22,15 @@
     <div id="status">
       Status:
 
-      Redis <%= @status[:redis_version] %> |
-      Uptime: <%= time_distance @status[:uptime_in_seconds].to_i %> |
-      Connected clients: <%= @status[:connected_clients] %> |
-      Used memory: <%= file_size @status[:used_memory].to_i %> |
-      Last save time: <%= Time.at @status[:last_save_time].to_i %>
+      Redis <%= @status["redis_version"] %> |
+      Uptime: <%= time_distance @status["uptime_in_seconds"].to_i %> |
+      Connected clients: <%= @status["connected_clients"] %> |
+      Used memory: <%= file_size @status["used_memory"].to_i %> |
+      Last save time: <%= Time.at @status["last_save_time"].to_i %>
     </div>
 
     <div id="shredis-github">
-      <a href="http://github.com/filiptepper/shredis">shredis</a> 0.0.1
+      <a href="http://github.com/filiptepper/shredis">shredis</a> 0.1.0
     </div>
   </div>
 </body>

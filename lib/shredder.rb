@@ -35,9 +35,3 @@ class Shredder
 
   end
 end
-
-class Redis
-  def get(key)
-    call_command [:get, key]
-  end
-end

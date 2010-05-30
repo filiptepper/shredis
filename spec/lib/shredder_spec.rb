@@ -12,7 +12,7 @@ describe Shredder do
   end
 
   it "returns current server settings" do
-    Shredder.info.should include(:redis_version)
+    Shredder.info.should include("redis_version")
   end
 
   it "raises an exception when method is not implemented in redis gem" do;
