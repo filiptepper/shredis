@@ -5,3 +5,4 @@ webrat.log
 .DS_Store
 .bundle
 Gemfile.lock
+.rvmrc
