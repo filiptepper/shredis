@@ -1,3 +1,10 @@
+require "rubygems"
+require "bundler"
+Bundler.setup
+
+require "sinatra"
+require "redis"
+
 Dir[File.join(File.dirname(__FILE__), "lib", "*")].each { |file| require file }
 
 ROOT_DIR = File.dirname(__FILE__)

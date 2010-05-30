@@ -26,7 +26,7 @@ class Shredder
 
     def initialize_config
       @@config = {}
-      @@config.merge YAML::load_file(File.join(ROOT_DIR, "config", "redis.yml"))[Sinatra::Application.environment.to_s || "development"]
+      @@config.merge! YAML::load_file(File.join(ROOT_DIR, "config", "redis.yml"))[Sinatra::Application.environment.to_s || "development"]
     end
 
     def initialize_redis
