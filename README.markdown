@@ -12,11 +12,11 @@ Usage
     cd shredis
     gem install bundler
     bundle install
-    cp redis.yml.example redis.yml
+    cp config/redis.yml.example config/redis.yml
 
-Edit `redis.yml`.
+Edit `config/redis.yml`.
 
-    rackup
+    rake shredis:start
 
 Browse to `http://localhost:9292/`.
 
